@@ -1,0 +1,356 @@
+body{
+    margin: 0;
+    
+  }
+  .container{
+    width: 100vw;
+    height: 100vh;
+  
+    font-family: 'Quicksand', sans-serif ;
+    font-weight: bold;
+    font-size: 20px;
+  }
+.container {  display: grid;
+    grid-template-columns: 1fr 1.3fr 0.7fr;
+    grid-template-rows: 0.4fr 0.5fr 2.1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "logo logo menu"
+      "context context menu"
+      "context context menu";
+  }
+  
+  .logo { grid-area: logo; }
+  
+  .menu { grid-area: menu; }
+  
+  .context { grid-area: context; }
+/* logo */
+  .logo{
+    width: 100%;
+    height: 170%;
+  }
+  /* menu */
+  .boxmenu{
+    background-color: #89d0e8;
+    border: 2px solid black;
+    width: 95%;
+    height: 600%;
+    margin-top: -6%;
+    margin-right: 0%;
+  }
+  .menu li{
+   margin-bottom: 0;
+   text-align:center;
+   list-style: none;
+   font-size: 1.5rem;
+   padding-bottom: 5%;
+   padding-top: 20%;
+   text-decoration: none;
+   text-size-adjust: 20%;
+   font-family: italic;
+
+  }
+   /* text */
+   .titel h2{
+    margin-top: -20%;
+    margin-left: 35%;
+    font-size: 4.5rem;
+  }
+  .text p{
+    margin-left: 2%;
+    font-size: large;
+    border-bottom: 3px solid black;
+    font-family: 'Agency FB';
+  }
+
+   /* Timeline */
+
+ .wrapper{
+    margin: 0% ;
+    border-left: 3px solid #000;
+    margin-left: 2%;
+    margin-top: 3%;
+  }
+  
+  .box{
+    background-color: #89d0e8;
+    font-size: 0.8rem;
+    border: 1px solid #CCC;
+    position: relative;
+    height: 9rem;
+    margin-bottom: 1%;
+    color: #fff;
+    border-radius: 0 50px 0 50px;
+    width: 40%;
+  
+  }
+  
+  .box:before{
+    content: '';
+    display: block;
+    width: 1%;
+    height: 1%;
+    border-radius: 50%;
+    background-color: #000;
+    border: 3px solid #fff;
+    position: absolute;
+    margin-top: 10%;
+    margin-left: -400%;
+  }
+  
+  .box::after{
+    content: '';
+    width: 0;
+    height: 10%;
+    border-style: solid;
+    border-color: transparent #262626 transparent transparent;
+    border-width: 8px;
+    position: absolute;
+    margin-left: -17%;
+    margin-top: 10%;
+  }
+  
+  .box h2{
+    margin: 0;
+    font-family: 'Agency FB';
+    font-size: 2.3rem;
+    letter-spacing: 3px;
+  }
+  
+  .box p{
+    margin: 0;
+    line-height:1.8;
+  }
+  /* Kleine Telefoon */
+  @media  only screen and (min-width: 0px)and (max-width: 320px){
+    .container {  display: grid;
+        grid-template-columns: 1fr 1.3fr 0.7fr;
+        grid-template-rows: 0.4fr 0.3fr 2.3fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+          "logo logo logo"
+          "menu menu menu"
+          "context context context";
+      }
+      
+      .logo { grid-area: logo; }
+      
+      .menu { grid-area: menu; }
+      
+      .context { grid-area: context; }
+       /* logo */
+    .logo{
+        width: 335%;
+        height: 700%;
+      }
+      /* menu */
+    .boxmenu{
+        margin-top: 2%;
+        margin-left: 0%;
+        background-color: #89d0e8;
+        width: 335%;
+        height: 70%;
+        }
+     .menu li{
+        display: inline-block;
+        text-align: center;
+        padding: 0;
+        font-size: 2.5rem;
+        }
+        /* text */
+        .titel h2{
+            font-size: 5.2rem;
+            margin-left: 100%;
+            margin-top: 10%;
+        }
+        .text p{
+            font-size: 3.5rem;
+            width: 300%;
+            margin-left: 7%;
+        }
+        /* timeline */
+        .wrapper{
+            margin: 0%;
+            margin-left: 5%;
+        }
+        .box{
+            font-size: 3rem;
+            height: 1500%;
+            margin-bottom: 5%;
+            width: 350%;
+            font-family: 'Agency FB';
+        }
+        .box h2{
+            font-size: 3.3rem;
+        }
+    }
+    /* Grote Telefoon */
+  @media  only screen and (min-width: 320px)and (max-width: 720px){
+    .container {  display: grid;
+        grid-template-columns: 1fr 1.3fr 0.7fr;
+        grid-template-rows: 0.4fr 0.3fr 2.3fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+          "logo logo logo"
+          "menu menu menu"
+          "context context context";
+      }
+      
+      .logo { grid-area: logo; }
+      
+      .menu { grid-area: menu; }
+      
+      .context { grid-area: context; }
+      /* logo */
+      .logo{
+        width: 400%;
+        height: 700%;
+      }
+      /* menu */
+      .boxmenu{
+        margin-top: 2%;
+        margin-left: 0%;
+
+        width: 705%;
+        height: 70%;
+        }
+     .menu li{
+        display: inline-block;
+        text-align: center;
+        padding: 0;
+        font-size: 3rem;
+        }
+        /* context */
+        .titel h2{
+            margin-top: 10%;
+            margin-left: 180%;
+            font-size: 6.5rem;
+        }
+        .text p{
+            margin-top: 0%;
+            margin-left: 60%;
+            font-size: 4rem;
+            width: 300%;
+            border-bottom: 5px solid black;
+        }
+         /* timeline */
+         .wrapper{
+            margin: 0%;
+            margin-left: 5%;
+        }
+        .box{
+            font-size: 4rem;
+            height: 1500%;
+            margin-bottom: 5%;
+            width: 350%;
+            font-family: 'Agency FB';
+        }
+        .box h2{
+            font-size: 6rem;
+        }
+    }
+    /* laptop/desktop */
+    @media  only screen and (min-width: 720px)and (max-width: 1024px){
+        .container {  display: grid;
+            grid-template-columns: 1fr 1.3fr 0.7fr;
+            grid-template-rows: 0.4fr 0.5fr 2.1fr;
+            gap: 0px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:
+              "logo logo menu"
+              "context context menu"
+              "context context menu";
+          }
+          
+          .logo { grid-area: logo; }
+          
+          .menu { grid-area: menu; }
+          
+          .context { grid-area: context; }
+           /* logo */
+      .logo{
+        height: 300%;
+      }
+      /* menu */
+      .boxmenu{
+        height: 1150%;
+        margin-right: 0%;
+      }
+      /* context */
+      .titel h2{
+        margin-left: 18%;
+      }
+      .text p{
+        margin-left: 4%;
+        margin-top: -5%;
+      }
+      /* timeline */
+      .wrapper{
+        margin: 0%;
+        margin-left: 5%;
+    }
+    .box{
+        font-size: 2rem;
+        height: 5%;
+        margin-bottom: 5%;
+        width: 90%;
+        border-radius: 20px;
+        font-family: 'Agency FB';
+    }
+    .box h2{
+        font-size: 2.5rem;
+    }
+    }
+     /* full screen */
+     @media  only screen and (min-width: 1024px)and (max-width: 1323px){
+        .container {  display: grid;
+            grid-template-columns: 1fr 1.3fr 0.7fr;
+            grid-template-rows: 0.4fr 0.5fr 2.1fr;
+            gap: 0px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:
+              "logo logo menu"
+              "context context menu"
+              "context context menu";
+          }
+          
+          .logo { grid-area: logo; }
+          
+          .menu { grid-area: menu; }
+          
+          .context { grid-area: context; }
+        /* logo */
+        .logo{
+            height: 300%; 
+        }
+        /* menu */
+        .boxmenu{
+            height: 870%;
+        }
+        /* context */
+        .text p{
+            width: 50%;
+            margin-left: 0%;
+            width: 100%;
+        }
+         /* timeline */
+      .wrapper{
+        margin: 0%;
+        margin-left: 1%;
+    }
+    .box{
+        font-size: 2rem;
+        height: 5%;
+        margin-bottom: 3%;
+        width: 90%;
+        border-radius: 20px;
+        font-family: 'Agency FB';
+    }
+    .box h2{
+        font-size: 2.5rem;
+    }
+    }
