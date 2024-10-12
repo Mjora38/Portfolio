@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon-Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="data/collisions.js">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="../home.html" class="back-button">Back</a>
+    <div id="canvas-container">
+        <div class="battleZones" id="overlappingDiv"></div>
+        <div id="scoreBoard">
+            <div id="highScoreBoard">
+                High Score: <span id="highScore">0</span>
+            </div>
+            <div id="score">Score: 0</div>
+        </div>
+        <div class="controls">
+            <div class="left">
+                <button id="left"></button>
+            </div>
+            <div class="right">
+                <button id="right"></button>
+            </div>
+            <div class="up">
+                <button id="up"></button>
+            </div>
+            <div class="down">
+                <button id="down"></button>
+        </div>
+        </div>
+        <canvas></canvas>
+        <div id="userInterface">
+            <div class="top-box">
+                <h1>Jaspie</h1>
+                <div class="health-bar-jaspie">
+                    <div class="health-jaspie"></div>
+                    <div id="enemyHealthBar" class="health-jaspie-2"></div>
+                </div>
+            </div>
+            <div class="bottom-box">
+                <h1>Artie</h1>
+                <div class="health-bar-artie">
+                    <div class="health-artie"></div>
+                    <div id="playerHealthBar" class="health-artie-2"></div>
+                </div>
+            </div>
+            <div class="bar">
+                <div class="dialogue" id="dialogueBox">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis labore necessitatibus ullam et numquam dolor cumque corrupti libero quo, suscipit itaque iusto hic minus mollitia molestias placeat modi dolore quam!</div>
+                <div class="attack" id="attackBox">
+    
+                </div>
+                <div class="attack-type">
+                    <h1 id="attackType">Attack Type</h1>
+                </div>
+        </div>
+        </div>
+        <div id="alertBox" style="display: none;">
+            <div id="alertMessage"></div>
+            <button id="alertClose">Close</button>
+        </div>
+    
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" 
+      integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" 
+      crossorigin="anonymous" 
+      referrerpolicy="no-referrer">
+    </script>
+
+    <script src="data/battleZones.js"></script>
+    <script src="data/collisions.js"></script>
+    <script src="data/attacks.js"></script>
+    <script src="data/monsters.js"></script>
+    <script src="classes.js"></script>
+    <script src="index.js"></script>   
+    <script src="battleScene.js"></script> 
+</div>
+</body>
+</html>

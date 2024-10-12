@@ -1,0 +1,325 @@
+*{
+    font-family: 'Press Start 2P', system-ui;
+}
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+#canvas-container {
+    display: inline-block;
+    position: relative;
+}
+.battleZones{
+    background-color: black;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.bar{
+    background-color: white;
+    width: 100%; /* Make the bar as wide as its parent element */
+    height: 140px;
+    position: absolute; /* Position the bar relative to the nearest positioned ancestor */
+    bottom: 0; /* Position the bar at the bottom of its parent element */
+    left: 0; /* Position the left edge of the bar at the left edge of the canvas */
+    border-top: 4px black solid;
+    display: flex;
+}
+h1{
+    margin: 0;
+    font-size: 16px;
+}
+.attack {
+    display: grid; /* Set the .attack div to display as a grid */
+    grid-template-columns: repeat(2, 1fr); /* Define two equal-width columns */
+    width: 66.66%;
+}
+.attack-type {
+    display: flex;
+    align-items: center; /* Vertically center the text */
+    justify-content: center; /* Horizontally center the text */
+    width: 33.33%;
+    border-left: 4px black solid;
+}
+
+button {
+    display: flex; /* Set the button to display as flex */
+    align-items: center; /* Vertically center the text */
+    justify-content: center; /* Horizontally center the text */
+    grid-template-columns: repeat(2, 1fr); /* Define two equal-width columns */
+    border: none;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #ddd;
+}
+
+.top-box{
+    background-color: white;
+    width: 250px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    border: 4px black solid;
+    padding: 12px;
+
+}
+
+.top-box h1, .bottom-box h1{
+    font-size: 16px;
+    margin: 0;
+}
+
+.health-jaspie {
+    height: 5px;
+    background-color: #ccc;
+    margin-top: 10px;
+
+}
+
+.health-artie{
+    height: 5px;
+    background-color: #ccc;
+    margin-top: 10px;
+}
+
+.health-jaspie-2 {
+    height: 5px;
+    background-color: green;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.health-artie-2{
+    height: 5px;
+    background-color: green;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.health-bar-jaspie {
+    position: relative;
+}
+
+.health-bar-artie{
+    position: relative;
+}
+
+.bottom-box{
+    background-color: white;
+    width: 250px;
+    position: absolute;
+    bottom: 200px;
+    right: 50px;
+    border: 4px black solid;
+    padding: 12px;
+}
+
+.dialogue{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    padding: 12px;
+    display: none;
+    cursor: pointer;
+}
+
+#alertBox {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f8f9fa; /* Light grey background */
+    border: 5px solid #343a40; /* Dark grey border with increased width */
+    padding: 20px;
+    z-index: 1000;
+    width: 300px; /* Set a fixed width */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow for a 3D effect */
+    font-size: 24px; /* Larger text */
+    font-weight: bold; /* Bold text */
+    color: #333; /* Dark grey text */
+}
+
+#alertMessage {
+    margin-bottom: 20px;
+    text-align: center; /* Centered text */
+}
+
+#alertClose {
+    background-color: #343a40; /* Dark grey background */
+    color: #fff; /* White text */
+
+    padding: 10px 20px;
+    cursor: pointer;
+    display: block; /* Full-width button */
+    margin: auto; /* Centered button */
+    font-size: 18px; /* Larger text */
+}
+
+#scoreBoard {
+    position: absolute;
+    top: 10px;
+    right: -300px;
+    background-color: #f8f9fa; /* Light grey background */
+    border: 2px solid #343a40; /* Dark grey border */
+    padding: 20px; /* Increase padding */
+    border-radius: 15px; /* Increase border radius */
+    font-size: 28px; /* Increase font size */
+    color: #333; /* Dark grey text */
+    width: 250px; /* Increase width */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add shadow */
+}
+
+#score, #highScoreBoard {
+    margin-bottom: 15px; /* Increase space between the score and the high score */
+}
+
+
+
+.controls div {
+    margin: 5px;
+}
+
+.controls {
+    user-select: none;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: grid;
+    grid-template-areas: 
+        ". up ."
+        "left . right"
+        ". down .";
+    gap: 10px;
+}
+
+.controls .up {
+    grid-area: up;
+}
+
+.controls .down {
+    grid-area: down;
+}
+
+.controls .left {
+    grid-area: left;
+}
+
+.controls .right {
+    grid-area: right;
+}
+
+.controls button {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    color: #333;
+    background-color: #f8f9fa;
+    border: 2px solid #343a40;
+    padding: 10px;
+    border-radius: 50%; /* Make the buttons round */
+    width: 50px; /* Set a fixed width */
+    height: 50px; /* Set a fixed height */
+    cursor: pointer;
+    user-select: none;
+    
+}
+
+.controls button:hover {
+    background-color: #e6e6e6;
+    color: #333;
+}
+
+.controls button:active {
+    background-color: #b5b5b5;
+    color: #333;
+}
+
+
+@media (min-width:1025px) {
+    body {
+        font-size: 14px; /* Smaller text */
+    }
+    .controls button {
+        font-size: 14px; /* Decrease font size */
+        width: 40px; /* Decrease width */
+        height: 40px; /* Decrease height */
+    }
+    .controls {
+        display: none;
+    }
+    .back-button {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        display: inline-block;
+        padding: 10px 20px;
+        text-decoration: none;
+        background-color: #6b5345;
+        color: #fff;
+        border-radius: 5px;
+        font-size: 1rem;
+        margin: 10px 0;
+        transition: background-color 0.3s ease-in-out;
+      }
+      
+      .back-button:hover {
+        background-color: #967f72;
+      }
+}
+
+@media (max-width:1025px) {
+    body {
+        font-size: 14px; /* Smaller text */
+    }
+    
+    #scoreBoard {
+        display: none;
+    }
+    .controls button {
+        font-size: 14px; /* Decrease font size */
+        width: 40px; /* Decrease width */
+        height: 40px; /* Decrease height */
+    }
+    /*remove the scoreboard */
+    #scoreBoard, .playerName{
+        display: none;
+    }
+    .top-box, .bottom-box {
+        width: 20%; /* Adjust as needed */
+        height: 5%; /* Adjust as needed */
+        margin: 3px; /* Center the boxes */
+    }
+    .bottom-box {
+        position: absolute;
+        right: 10px;
+        bottom: 80px;
+    }
+    .health-jaspie, .health-artie{
+        margin: 3px;
+    }
+
+    .bar{
+        height: 15%;
+        width: 100%;
+    }
+}
